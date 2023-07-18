@@ -1,10 +1,12 @@
 # @jacepkg/korean
 
+한글과 관련된 모듈 모음
+
 > github: https://github.com/jacealan/jacepkg-ts  
 > npm: https://www.npmjs.com/package/@jacepkg/korean
 
 - syllable(): 한글 음절 생성기
-  > Korean-Syllable is the module that make any korean syllable.
+  > syllable() is the module that make any korean syllable.
 
 # Installation
 

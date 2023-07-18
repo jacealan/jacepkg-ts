@@ -1,6 +1,6 @@
 # jacepkg-ts: npm packages by jace
 
-- github: https://github.com/jacealan/jacepkg-ts
+> github: https://github.com/jacealan/jacepkg-ts
 
 ## @jacepkg/korean
 
