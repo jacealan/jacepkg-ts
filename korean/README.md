@@ -7,6 +7,14 @@
 
 - syllable(): 한글 음절 생성기
   > syllable() is the module that make any korean syllable.
+- countLetter(): 글자수 세기
+  > countLetter() is the module that count letter of strings
+- countByte(): 바이트(Byte)크기 세기
+  > countByte() is the module that count byte of strings
+- countWord(): 단어수(띄어쓰기 기준) 세기
+  > countWord() is the module that count word of strings by space
+- clearSpace(): 문자열 정리: 탭(tab) -> 빈칸, 연속된 빈칸 -> 빈칸1개
+  > clearSpace() is the module that make tab, double space to ONE space
 
 # Installation
 
@@ -18,58 +26,75 @@ npm install @jacepkg/korean
 
 ## Importing
 
-```js
-import { syllable } from "@jacepkg/korean"
+```ts
+import {
+  syllable,
+  countLetter,
+  countByte,
+  countWord,
+  clearSpace,
+} from "@jacepkg/korean"
+
+syllable()
 ```
-
-## Making any korean syllable(s)
-
-### 1 syllable
 
 ```ts
-const ex: string = syllable()
-console.log(ex) // 촒
+import korean from "@jacepkg/korean"
+
+korean.syllable()
 ```
 
-### more syllables
-
-```ts
-const length: number = 10
-const ex: string = syllable(length)
-console.log(ex) // 줩뇅쳱펻뻘껨즰쌍쉁뺼죓
-```
-
-`length` is the length of syllables
-
-### with space
-
-```ts
-const length: number = 10
-const withspace: boolean = true
-const ex: string = syllable(length, withspace)
-console.log(ex) // 둎찍굍 뺍푡롁 쯚럔
-```
-
-### parameters
+## syllable(length: number = 1, withspace: boolean = false): number
 
 - length, withspace가 없으면 한 음절 생성
 - withspace가 없거나 false면 공백 없이 원하는 길이의 음절 생성
 
-### at node console
+```ts
+syllable() // 촒
+syllable(10) // 줩뇅쳱펻뻘껨즰쌍쉁뺼죓
+syllable(10, true // 둎찍굍 뺍푡롁 쯚럔
+```
 
-```sh
-$ node
-Welcome to Node.js v16.13.1.
-Type ".help" for more information.
-> const { syllable } = require("@jacepkg/korean")
-undefined
-> syllable()
-'휒'
-> syllable(30)
-'잂쬦룁캩탧릝쾹뭧퍱툾뛺땃뙾묧밟궯턉짋깖눅튰뇎깦쳟퐢옭헠힜솾뱬'
-> syllable(30, true)
-'녂퀘궠뮇 톫륂쥢뉓뎋맘 쁗푋혌잞 셇뛅듵놸 튚쯯 횓왒캔롛깴'
->
+## countLetter(text: string, withspace: boolean = true): number
+
+```ts
+countLetter("둎찍굍 뺍푡롁 쯚럔") // 10
+countLetter("둎찍굍 뺍푡롁 쯚럔", false) // 8
+```
+
+## countByte(text: string, withspace: boolean = true): number
+
+```ts
+countByte("둎찍굍 뺍푡롁 쯚럔") // 26
+countByte("둎찍굍 뺍푡롁 쯚럔", false) // 24
+```
+
+## countWord(text: string): number
+
+```ts
+countWord("둎찍굍 뺍푡롁 쯚럔") // 3
+countWord("둎찍굍 뺍푡롁   쯚럔") // 3
+```
+
+## clearSpace(text: string, allowEmptyLine: number = 0): string
+
+```ts
+clearSpace("가나다    라마 바         사아") // 가나다 라마 바 사아
+clearSpace("가나다  라마 바 사아\n하하하하\n\n\n\n대한민국 최고")
+// 가나다 라마 바 사아
+// 하하하하
+// 대한민국 최고
+clearSpace("가나다  라마 바 사아\n하하하하\n\n\n\n대한민국 최고", 1)
+// 가나다 라마 바 사아
+// 하하하하
+//
+// 대한민국 최고
+clearSpace("가나다  라마 바 사아\n하하하하\n\n\n\n대한민국 최고", 2)
+// 가나다 라마 바 사아
+// 하하하하
+//
+//
+// 대한민국 최고
 ```
 
 ## references

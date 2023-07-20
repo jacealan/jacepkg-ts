@@ -48,7 +48,7 @@ export function syllable(
 }
 
 /**
- * 문자열 글자수 세기
+ * 글자수 세기
  * @param {string} text - 문자열
  * @param {boolean} [withspace=true] - 빈칸 포함 여부(default: true)
  * @returns {number} 글자수
@@ -106,7 +106,7 @@ export function countWord(text: string): number {
  * @param {number} [allowEmptyLine = 0] - 가능한 빈 줄 수
  * @returns {string} 정리된 문자열
  */
-export function clearSpace(text: string, allowEmptyLine: number = 0) {
+export function clearSpace(text: string, allowEmptyLine: number = 0): string {
   const words: string[] = text.replace("\t", " ").split(" ")
 
   let newWords: string[] = []

@@ -6,7 +6,7 @@
  */
 export declare function syllable(length?: number, withspace?: boolean): string;
 /**
- * 문자열 글자수 세기
+ * 글자수 세기
  * @param {string} text - 문자열
  * @param {boolean} [withspace=true] - 빈칸 포함 여부(default: true)
  * @returns {number} 글자수
