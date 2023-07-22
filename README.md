@@ -1,4 +1,4 @@
-# jacepkg-ts: npm packages by jace
+# jacepkg-ts: npm module package by jace
 
 > github: https://github.com/jacealan/jacepkg-ts
 
