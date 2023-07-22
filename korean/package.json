@@ -1,7 +1,7 @@
 {
   "name": "@jacepkg/korean",
-  "version": "0.0.3",
-  "description": "get a any string",
+  "version": "0.0.7",
+  "description": "module relating korean: syllable, count, clear",
   "main": "lib/index.js",
   "files": [
     "lib"

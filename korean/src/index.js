@@ -44,7 +44,7 @@ function syllable(length, withspace) {
 }
 exports.syllable = syllable;
 /**
- * 글자수 세기
+ * 문자열 글자수 세기
  * @param {string} text - 문자열
  * @param {boolean} [withspace=true] - 빈칸 포함 여부(default: true)
  * @returns {number} 글자수
@@ -102,7 +102,6 @@ exports.countWord = countWord;
 /**
  * 문자열 정리: 탭(tab) -> 빈칸, 연속된 빈칸 -> 빈칸1개
  * @param {string} text - 문자열
- * @param {number} [allowEmptyLine = 0] - 가능한 빈 줄 수
  * @returns {string} 정리된 문자열
  */
 function clearSpace(text, allowEmptyLine) {
@@ -131,6 +130,15 @@ function clearSpace(text, allowEmptyLine) {
     return newLines.join("\n");
 }
 exports.clearSpace = clearSpace;
-// const text = "I love 🚀🚀🚀 so much   😍 가나다락     \n\n\n\n\nasdf\nzxcv dfg"
+var text = "I love 🚀🚀🚀 so much   😍 가나다락     \n\n\n\n\nasdf\nzxcv dfg";
+// const text = "가"
+console.log(countLetter(text));
+console.log(countLetter(text, false));
+console.log(countByte(text));
+console.log(countByte(text, false));
+console.log(countWord(text));
+console.log(clearSpace(text));
+console.log(clearSpace(text, 1));
+console.log(clearSpace(text, 2));
 var korean = { syllable: syllable, countLetter: countLetter, countByte: countByte, countWord: countWord, clearSpace: clearSpace };
 exports.default = korean;

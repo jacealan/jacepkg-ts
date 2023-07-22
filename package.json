@@ -1,0 +1,11 @@
+{
+  "name": "jacepkg-ts",
+  "version": "0.1.0",
+  "description": "module collection by Jace",
+  "author": "Jace",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.4.2",
+    "typescript": "^5.1.6"
+  }
+}
